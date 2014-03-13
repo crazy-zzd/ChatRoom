@@ -21,6 +21,7 @@
     if (self) {
         mainNetWork = [[NetWork alloc] init];
         
+        
         UIButton * testBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [testBtn setTitle:@"test" forState:UIControlStateNormal];
         [testBtn setFrame:CGRectMake(100, 100, 100, 100)];
