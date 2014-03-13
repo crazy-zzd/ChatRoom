@@ -19,6 +19,10 @@
 		628CD3F418D1C655002DCA75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628CD3DC18D1C655002DCA75 /* UIKit.framework */; };
 		628CD3FC18D1C655002DCA75 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 628CD3FA18D1C655002DCA75 /* InfoPlist.strings */; };
 		628CD3FE18D1C655002DCA75 /* CharRoomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CD3FD18D1C655002DCA75 /* CharRoomTests.m */; };
+		628CD40A18D1C666002DCA75 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CD40818D1C666002DCA75 /* RootViewController.m */; };
+		628CD40B18D1C666002DCA75 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 628CD40918D1C666002DCA75 /* RootViewController.xib */; };
+		628CD41018D1C847002DCA75 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CD40F18D1C847002DCA75 /* AsyncUdpSocket.m */; };
+		628CD41418D1C8A3002DCA75 /* NetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CD41318D1C8A3002DCA75 /* NetWork.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,13 @@
 		628CD3F918D1C655002DCA75 /* CharRoomTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CharRoomTests-Info.plist"; sourceTree = "<group>"; };
 		628CD3FB18D1C655002DCA75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		628CD3FD18D1C655002DCA75 /* CharRoomTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharRoomTests.m; sourceTree = "<group>"; };
+		628CD40718D1C666002DCA75 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ../RootViewController.h; sourceTree = "<group>"; };
+		628CD40818D1C666002DCA75 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = ../RootViewController.m; sourceTree = "<group>"; };
+		628CD40918D1C666002DCA75 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RootViewController.xib; path = ../RootViewController.xib; sourceTree = "<group>"; };
+		628CD40E18D1C847002DCA75 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		628CD40F18D1C847002DCA75 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		628CD41218D1C8A3002DCA75 /* NetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWork.h; sourceTree = "<group>"; };
+		628CD41318D1C8A3002DCA75 /* NetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWork.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +118,12 @@
 		628CD3DE18D1C655002DCA75 /* CharRoom */ = {
 			isa = PBXGroup;
 			children = (
-				628CD3E718D1C655002DCA75 /* AppDelegate.h */,
+				628CD41118D1C851002DCA75 /* AsyncUdpSocket */,
+				628CD40D18D1C682002DCA75 /* nibFiles */,
+				628CD40C18D1C674002DCA75 /* headers */,
 				628CD3E818D1C655002DCA75 /* AppDelegate.m */,
+				628CD41318D1C8A3002DCA75 /* NetWork.m */,
+				628CD40818D1C666002DCA75 /* RootViewController.m */,
 				628CD3EA18D1C655002DCA75 /* Images.xcassets */,
 				628CD3DF18D1C655002DCA75 /* Supporting Files */,
 			);
@@ -142,6 +157,33 @@
 				628CD3FA18D1C655002DCA75 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		628CD40C18D1C674002DCA75 /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				628CD41218D1C8A3002DCA75 /* NetWork.h */,
+				628CD3E718D1C655002DCA75 /* AppDelegate.h */,
+				628CD40718D1C666002DCA75 /* RootViewController.h */,
+			);
+			name = headers;
+			sourceTree = "<group>";
+		};
+		628CD40D18D1C682002DCA75 /* nibFiles */ = {
+			isa = PBXGroup;
+			children = (
+				628CD40918D1C666002DCA75 /* RootViewController.xib */,
+			);
+			name = nibFiles;
+			sourceTree = "<group>";
+		};
+		628CD41118D1C851002DCA75 /* AsyncUdpSocket */ = {
+			isa = PBXGroup;
+			children = (
+				628CD40E18D1C847002DCA75 /* AsyncUdpSocket.h */,
+				628CD40F18D1C847002DCA75 /* AsyncUdpSocket.m */,
+			);
+			name = AsyncUdpSocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +263,7 @@
 			files = (
 				628CD3E318D1C655002DCA75 /* InfoPlist.strings in Resources */,
 				628CD3EB18D1C655002DCA75 /* Images.xcassets in Resources */,
+				628CD40B18D1C666002DCA75 /* RootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +283,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				628CD3E918D1C655002DCA75 /* AppDelegate.m in Sources */,
+				628CD41418D1C8A3002DCA75 /* NetWork.m in Sources */,
 				628CD3E518D1C655002DCA75 /* main.m in Sources */,
+				628CD40A18D1C666002DCA75 /* RootViewController.m in Sources */,
+				628CD41018D1C847002DCA75 /* AsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

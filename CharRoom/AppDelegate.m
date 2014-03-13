@@ -7,14 +7,29 @@
 //
 
 #import "AppDelegate.h"
+#import "RootViewController.h"
+
 
 @implementation AppDelegate
+
+@synthesize viewController;
+@synthesize navController;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    
+    self.viewController = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+    //    self.viewController.title = @"main page";
+    
+    self.navController = [[UINavigationController alloc] init];
+    [self.navController pushViewController:self.viewController animated:NO];
+    
+    //    [self.window addSubview:self.navController.view];
+    self.window.rootViewController = self.navController;
+    
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

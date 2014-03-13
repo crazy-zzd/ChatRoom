@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class RootViewController;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+//for the main page
+@property (strong, nonatomic) RootViewController *viewController;
+
+//for the navigation
+@property (strong, nonatomic) UINavigationController *navController;
 
 @property (strong, nonatomic) UIWindow *window;
 
