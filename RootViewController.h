@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ReceiveMessageDelegate.h"
 
 @class NetWork;
 
-@interface RootViewController : UIViewController{
+@interface RootViewController : UIViewController<ReceiveMessageDelegate>{
     NetWork * mainNetWork;
 }
 

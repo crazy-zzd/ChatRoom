@@ -11,6 +11,8 @@
 
 @implementation NetWork
 
+@synthesize delegate;
+
 #pragma mark - init
 - (id)init
 {
@@ -70,10 +72,10 @@
                           tag:0];
     
     if (!result) {
-//        NSLog(@"send failed");
+        NSLog(@"send failed");
     }
     else{
-//        NSLog(@"send succeed");
+        NSLog(@"send succeed");
     }
 }
 
@@ -88,6 +90,8 @@
     NSString *info=[[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding];
     NSLog(@"the resource string:%@",info);
 
+    [self.delegate receiveMessageWith:info];
+    
 //    if ([info isEqualToString:CONNECT_RECEIVED_FIRST]) {
 //        broadCastHost = host;
 //        receiveMessage = [NSString stringWithFormat:@"%@",info];

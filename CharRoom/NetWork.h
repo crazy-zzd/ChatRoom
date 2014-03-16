@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 //#import "MyHeader.h"
 #import "AsyncUdpSocket.h"
+#import "ReceiveMessageDelegate.h"
 
 //@class AsyncUdpSocket;
 
@@ -22,6 +23,9 @@
     //发送的端口
     int mainPort;
 }
+
+@property (nonatomic, weak) id<ReceiveMessageDelegate>delegate;
+
 //对外接口
 //发送消息
 -(void)sendMessageWith:(NSString *)theMessage;

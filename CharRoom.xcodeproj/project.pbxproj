@@ -59,6 +59,7 @@
 		628CD40F18D1C847002DCA75 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
 		628CD41218D1C8A3002DCA75 /* NetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWork.h; sourceTree = "<group>"; };
 		628CD41318D1C8A3002DCA75 /* NetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWork.m; sourceTree = "<group>"; };
+		62C1CED418D5A7D6008E56F9 /* ReceiveMessageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiveMessageDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +125,7 @@
 				628CD3E818D1C655002DCA75 /* AppDelegate.m */,
 				628CD41318D1C8A3002DCA75 /* NetWork.m */,
 				628CD40818D1C666002DCA75 /* RootViewController.m */,
+				62C1CED418D5A7D6008E56F9 /* ReceiveMessageDelegate.h */,
 				628CD3EA18D1C655002DCA75 /* Images.xcassets */,
 				628CD3DF18D1C655002DCA75 /* Supporting Files */,
 			);
@@ -487,6 +489,7 @@
 				628CD40318D1C655002DCA75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		628CD40418D1C655002DCA75 /* Build configuration list for PBXNativeTarget "CharRoomTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +498,7 @@
 				628CD40618D1C655002DCA75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

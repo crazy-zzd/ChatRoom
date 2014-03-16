@@ -20,6 +20,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         mainNetWork = [[NetWork alloc] init];
+
+        mainNetWork.delegate = self;
         
         UIButton * testBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [testBtn setTitle:@"test" forState:UIControlStateNormal];
@@ -27,7 +29,8 @@
         [self.view addSubview:testBtn];
         [testBtn addTarget:self action:@selector(onPressTestBtn:) forControlEvents:UIControlEventTouchUpInside];
         
-//        // Custom initialization
+        
+
     }
     return self;
 }
@@ -49,6 +52,14 @@
 - (IBAction)onPressTestBtn:(id)sender
 {
     [mainNetWork sendMessageWith:@"testMessge"];
+}
+
+#pragma mark - receiveMessage delegate
+
+- (void)receiveMessageWith:(NSString *)theMessage
+{
+    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"收到信息" message:theMessage delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:nil, nil];
+    [alertView show];
 }
 
 @end
