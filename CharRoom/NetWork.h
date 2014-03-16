@@ -20,6 +20,9 @@
     //发送的Host地址
     NSString * broadCastHost;
     
+    //自己的iP地址
+    NSString * myIPStr;
+    
     //发送的端口
     int mainPort;
 }

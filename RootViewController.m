@@ -29,8 +29,11 @@
         [self.view addSubview:testBtn];
         [testBtn addTarget:self action:@selector(onPressTestBtn:) forControlEvents:UIControlEventTouchUpInside];
         
-        
-
+        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(100, 300, 100, 30)];
+        textField.placeholder = @"aa";
+        textField.delegate = self;
+        [textField setBorderStyle:UITextBorderStyleRoundedRect];
+        [self.view addSubview:textField];
     }
     return self;
 }
@@ -52,6 +55,26 @@
 - (IBAction)onPressTestBtn:(id)sender
 {
     [mainNetWork sendMessageWith:@"testMessge"];
+}
+
+#pragma mark - textField delegate
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    [mainNetWork sendMessageWith:textField.text];
+    textField.text = @"";
+    return YES;
 }
 
 #pragma mark - receiveMessage delegate

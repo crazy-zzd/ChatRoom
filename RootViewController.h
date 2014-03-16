@@ -11,7 +11,7 @@
 
 @class NetWork;
 
-@interface RootViewController : UIViewController<ReceiveMessageDelegate>{
+@interface RootViewController : UIViewController<ReceiveMessageDelegate,UITextFieldDelegate>{
     NetWork * mainNetWork;
 }
 

@@ -125,7 +125,6 @@
 				628CD3E818D1C655002DCA75 /* AppDelegate.m */,
 				628CD41318D1C8A3002DCA75 /* NetWork.m */,
 				628CD40818D1C666002DCA75 /* RootViewController.m */,
-				62C1CED418D5A7D6008E56F9 /* ReceiveMessageDelegate.h */,
 				628CD3EA18D1C655002DCA75 /* Images.xcassets */,
 				628CD3DF18D1C655002DCA75 /* Supporting Files */,
 			);
@@ -164,6 +163,7 @@
 		628CD40C18D1C674002DCA75 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				62C1CED418D5A7D6008E56F9 /* ReceiveMessageDelegate.h */,
 				628CD41218D1C8A3002DCA75 /* NetWork.h */,
 				628CD3E718D1C655002DCA75 /* AppDelegate.h */,
 				628CD40718D1C666002DCA75 /* RootViewController.h */,
