@@ -9,14 +9,21 @@
 #import <Foundation/Foundation.h>
 //#import "MyHeader.h"
 #import "AsyncUdpSocket.h"
+#import "AsyncSocket.h"
 #import "ReceiveMessageDelegate.h"
+
+extern NSString * const NetWorkDefaultHost;
+extern int const NetWorkDefaultPort;
 
 //@class AsyncUdpSocket;
 
-@interface NetWork : NSObject<AsyncUdpSocketDelegate>{
+@interface NetWork : NSObject<AsyncUdpSocketDelegate,AsyncSocketDelegate>{
     //socket
-    AsyncUdpSocket * mainSocket;
-
+    AsyncUdpSocket * mainUdpSocket;
+    AsyncSocket * mainTcpSocket;
+    
+    
+    
     //发送的Host地址
     NSString * broadCastHost;
     
@@ -25,6 +32,10 @@
     
     //发送的端口
     int mainPort;
+    
+    //file
+    long fileLength;
+    NSMutableData * receiveData;
 }
 
 @property (nonatomic, weak) id<ReceiveMessageDelegate>delegate;

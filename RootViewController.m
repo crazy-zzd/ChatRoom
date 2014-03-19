@@ -13,6 +13,8 @@
 
 @end
 
+static NSString * const a = @"d";
+
 @implementation RootViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -29,7 +31,7 @@
         [self.view addSubview:testBtn];
         [testBtn addTarget:self action:@selector(onPressTestBtn:) forControlEvents:UIControlEventTouchUpInside];
         
-        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(100, 300, 100, 30)];
+        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(100, 200, 100, 30)];
         textField.placeholder = @"aa";
         textField.delegate = self;
         [textField setBorderStyle:UITextBorderStyleRoundedRect];

@@ -7,9 +7,9 @@
 //
 
 #import "NetWork.h"
-//#import "AsyncUdpSocket.h"
-#include <ifaddrs.h>
-#include <arpa/inet.h>
+
+NSString * const NetWorkDefaultHost = @"192.168.1.106";
+int const NetWorkDefaultPort = 2502;
 
 @implementation NetWork
 
@@ -20,15 +20,16 @@
 {
     self = [super init];
     if (self) {
+        broadCastHost = NetWorkDefaultHost;
+//        broadCastHost = @"192.168.1.106";
+//        broadCastHost = @"222.20.59.198";
         
-        broadCastHost = @"255.255.255.255";
-        
-        mainPort = 1760;
+        mainPort = NetWorkDefaultPort;
         
         [self initSocket];
-
-        myIPStr = [self getIPAddress];
-        NSLog(@"%@",myIPStr);
+        
+        fileLength = 0;
+        receiveData = [[NSMutableData alloc] initWithLength:0];
     }
     return self;
 }
@@ -37,12 +38,14 @@
 {
     NSError * error = Nil;
     
-    mainSocket = [[AsyncUdpSocket alloc] initIPv4];
-    [mainSocket setDelegate:self];
-    [mainSocket bindToPort:mainPort error:& error];
-    [mainSocket enableBroadcast:YES error:& error];
-    [mainSocket receiveWithTimeout:-1 tag:0];
-    
+    mainTcpSocket = [[AsyncSocket alloc] initWithDelegate:self];
+    if (![mainTcpSocket connectToHost:broadCastHost onPort:mainPort error:&error]) {
+        NSLog(@"连接消息发送失败,error:%@",error);
+    }
+    else{
+        NSLog(@"连接消息发送成功");
+    }
+    [mainTcpSocket readDataWithTimeout:-1 tag:1];
 }
 
 #pragma mark - 对外接口
@@ -50,104 +53,36 @@
 
 - (void)sendMessageWith:(NSString *)theMessage
 {
-    [self broadCast:broadCastHost withSocket:mainSocket withMessage:theMessage withPort:mainPort];
+    NSString * sendMessage = [NSString stringWithFormat:@"zjj : %@",theMessage];
+    NSData * sendData = [sendMessage dataUsingEncoding:NSUTF8StringEncoding];
+    [mainTcpSocket writeData:sendData withTimeout:-1 tag:1];
 }
 
 #pragma mark - private methods
 
-- (NSString *)getIPAddress
-{
-    NSString *address = @"error";
-    struct ifaddrs *interfaces = NULL;
-    struct ifaddrs *temp_addr = NULL;
-    int success = 0;
-    
-    // retrieve the current interfaces - returns 0 on success
-    success = getifaddrs(&interfaces);
-    if (success == 0) {
-        // Loop through linked list of interfaces
-        temp_addr = interfaces;
-        while (temp_addr != NULL) {
-            if( temp_addr->ifa_addr->sa_family == AF_INET) {
-                // Check if interface is en0 which is the wifi connection on the iPhone
-                if ([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"]) {
-                    // Get NSString from C String
-                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
-                }
-            }
-            
-            temp_addr = temp_addr->ifa_next;
-        }
-    }
-    
-    // Free memory
-    freeifaddrs(interfaces);
-    
-    return address;
-}
 
 
 #pragma mark - main methods
 
-- (void)broadCast:(NSString *)theHost withSocket:(AsyncUdpSocket *)theSocket withMessage:(NSString *)theMessage withPort:(int)thePort
+
+#pragma mark - AsyncSocket Delegate
+
+- (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
 {
-//    NSData * data = [theMessage dataUsingEncoding:NSASCIIStringEncoding] ;
-    NSData * data = [theMessage dataUsingEncoding:NSUTF8StringEncoding];
-    
-    BOOL result = NO;
-    //开始发送
-    result = [theSocket sendData:data
-                       toHost:theHost
-                         port:thePort
-                  withTimeout:1000
-                          tag:0];
-    
-    if (!result) {
-        NSLog(@"send failed");
-    }
-    else{
-        NSLog(@"send succeed");
-    }
+    NSString * sendMessage = @"zjj";
+    NSData * sendData = [sendMessage dataUsingEncoding:NSUTF8StringEncoding];
+    [mainTcpSocket writeData:sendData withTimeout:-1 tag:1];
+    NSLog(@"连接成功");
 }
 
-
-#pragma mark - AsyncUdpSocket Delegate
-- (BOOL)onUdpSocket:(AsyncUdpSocket *)sock didReceiveData:(NSData *)data withTag:(long)tag fromHost:(NSString *)host port:(UInt16)port
+- (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
-    [sock receiveWithTimeout:-1 tag:0];
-    NSLog(@"host---->%@",host);
-    
-    if ([host isEqualToString:myIPStr]) {
-        return YES;
-    }
-    
-    NSString *info=[[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding];
-    NSLog(@"the resource string:%@",info);
+    [mainTcpSocket readDataWithTimeout:-1 tag:1];
 
-    [self.delegate receiveMessageWith:info];
-
-    
-    return YES;
-}
-
-- (void)onUdpSocket:(AsyncUdpSocket *)sock didNotReceiveDataWithTag:(long)tag dueToError:(NSError *)error
-{
+    NSString * receiveMessage = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    [self.delegate receiveMessageWith:receiveMessage];
+    NSLog(@"%@",receiveMessage);
     
 }
 
-- (void)onUdpSocket:(AsyncUdpSocket *)sock didSendDataWithTag:(long)tag
-{
-//    NSLog(@"send succeed");
-}
-
-- (void)onUdpSocket:(AsyncUdpSocket *)sock didNotSendDataWithTag:(long)tag dueToError:(NSError *)error
-{
-//    NSLog(@"send failed");
-    
-}
-
-- (void)onUdpSocketDidClose:(AsyncUdpSocket *)sock
-{
-    
-}
 @end

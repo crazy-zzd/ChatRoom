@@ -23,6 +23,8 @@
 		628CD40B18D1C666002DCA75 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 628CD40918D1C666002DCA75 /* RootViewController.xib */; };
 		628CD41018D1C847002DCA75 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CD40F18D1C847002DCA75 /* AsyncUdpSocket.m */; };
 		628CD41418D1C8A3002DCA75 /* NetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CD41318D1C8A3002DCA75 /* NetWork.m */; };
+		62AF137A18D69DDF000D5197 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 62AF137918D69DDF000D5197 /* AsyncSocket.m */; };
+		62AF137C18D69EB3000D5197 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62AF137B18D69EB3000D5197 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,9 @@
 		628CD40F18D1C847002DCA75 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
 		628CD41218D1C8A3002DCA75 /* NetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWork.h; sourceTree = "<group>"; };
 		628CD41318D1C8A3002DCA75 /* NetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWork.m; sourceTree = "<group>"; };
+		62AF137818D69DDF000D5197 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		62AF137918D69DDF000D5197 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		62AF137B18D69EB3000D5197 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		62C1CED418D5A7D6008E56F9 /* ReceiveMessageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiveMessageDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62AF137C18D69EB3000D5197 /* CFNetwork.framework in Frameworks */,
 				628CD3DB18D1C655002DCA75 /* CoreGraphics.framework in Frameworks */,
 				628CD3DD18D1C655002DCA75 /* UIKit.framework in Frameworks */,
 				628CD3D918D1C655002DCA75 /* Foundation.framework in Frameworks */,
@@ -108,6 +114,7 @@
 		628CD3D718D1C655002DCA75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				62AF137B18D69EB3000D5197 /* CFNetwork.framework */,
 				628CD3D818D1C655002DCA75 /* Foundation.framework */,
 				628CD3DA18D1C655002DCA75 /* CoreGraphics.framework */,
 				628CD3DC18D1C655002DCA75 /* UIKit.framework */,
@@ -182,6 +189,8 @@
 		628CD41118D1C851002DCA75 /* AsyncUdpSocket */ = {
 			isa = PBXGroup;
 			children = (
+				62AF137818D69DDF000D5197 /* AsyncSocket.h */,
+				62AF137918D69DDF000D5197 /* AsyncSocket.m */,
 				628CD40E18D1C847002DCA75 /* AsyncUdpSocket.h */,
 				628CD40F18D1C847002DCA75 /* AsyncUdpSocket.m */,
 			);
@@ -287,6 +296,7 @@
 				628CD3E918D1C655002DCA75 /* AppDelegate.m in Sources */,
 				628CD41418D1C8A3002DCA75 /* NetWork.m in Sources */,
 				628CD3E518D1C655002DCA75 /* main.m in Sources */,
+				62AF137A18D69DDF000D5197 /* AsyncSocket.m in Sources */,
 				628CD40A18D1C666002DCA75 /* RootViewController.m in Sources */,
 				628CD41018D1C847002DCA75 /* AsyncUdpSocket.m in Sources */,
 			);
