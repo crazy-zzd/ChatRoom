@@ -41,6 +41,12 @@ extern int const NetWorkDefaultPort;
 @property (nonatomic, weak) id<ReceiveMessageDelegate>delegate;
 
 //对外接口
+
+- (void)setMainPort:(int)theMainPort;
+- (void)setBroadCastHost:(NSString *)theHost;
+
+- (void)initSocket;
+
 //发送消息
 -(void)sendMessageWith:(NSString *)theMessage;
 

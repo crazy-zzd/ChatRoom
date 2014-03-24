@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class RootViewController;
+@class PrivateChatViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 //for the main page
-@property (strong, nonatomic) RootViewController *viewController;
+@property (strong, nonatomic) PrivateChatViewController *viewController;
 
 //for the navigation
 @property (strong, nonatomic) UINavigationController *navController;

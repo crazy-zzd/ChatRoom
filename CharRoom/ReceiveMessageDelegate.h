@@ -13,4 +13,6 @@
 @required
 - (void)receiveMessageWith:(NSString *)theMessage;
 
+- (void)setState:(NSString *)theStateStr;
+
 @end

@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
-
+#import "PrivateChatViewController.h"
 
 @implementation AppDelegate
 
@@ -20,7 +20,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.viewController = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+    self.viewController = [[PrivateChatViewController alloc] initWithNibName:@"PrivateChatViewController" bundle:nil];
     //    self.viewController.title = @"main page";
     
     self.navController = [[UINavigationController alloc] init];

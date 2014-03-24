@@ -8,12 +8,12 @@
 
 #import "RootViewController.h"
 #import "NetWork.h"
+#import "PrivateChatViewController.h"
 
 @interface RootViewController ()
 
 @end
 
-static NSString * const a = @"d";
 
 @implementation RootViewController
 
@@ -26,8 +26,8 @@ static NSString * const a = @"d";
         mainNetWork.delegate = self;
         
         UIButton * testBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [testBtn setTitle:@"test" forState:UIControlStateNormal];
-        [testBtn setFrame:CGRectMake(100, 100, 100, 100)];
+        testBtn.frame = CGRectMake(100, 100, 100, 100);
+        [testBtn setTitle:@"跳转界面" forState:UIControlStateNormal];
         [self.view addSubview:testBtn];
         [testBtn addTarget:self action:@selector(onPressTestBtn:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -56,7 +56,8 @@ static NSString * const a = @"d";
 
 - (IBAction)onPressTestBtn:(id)sender
 {
-    [mainNetWork sendMessageWith:@"testMessge"];
+    PrivateChatViewController *priChatVC = [[PrivateChatViewController alloc] initWithNibName:@"PrivateChatViewController" bundle:nil];
+    [self.navigationController pushViewController:priChatVC animated:YES];
 }
 
 #pragma mark - textField delegate

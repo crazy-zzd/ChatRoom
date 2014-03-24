@@ -25,6 +25,15 @@
 		628CD41418D1C8A3002DCA75 /* NetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CD41318D1C8A3002DCA75 /* NetWork.m */; };
 		62AF137A18D69DDF000D5197 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 62AF137918D69DDF000D5197 /* AsyncSocket.m */; };
 		62AF137C18D69EB3000D5197 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62AF137B18D69EB3000D5197 /* CFNetwork.framework */; };
+		62EAEC2B18D940B3004C87A5 /* PrivateChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EAEC2A18D940B3004C87A5 /* PrivateChatViewController.m */; };
+		62EAEC4918D940FD004C87A5 /* toolbar_bottom_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 62EAEC3618D940FD004C87A5 /* toolbar_bottom_bar.png */; };
+		62EAEC4A18D940FD004C87A5 /* chat_bg_default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62EAEC3718D940FD004C87A5 /* chat_bg_default.jpg */; };
+		62EAEC4D18D940FD004C87A5 /* chatfrom_bg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 62EAEC3A18D940FD004C87A5 /* chatfrom_bg_normal.png */; };
+		62EAEC4F18D940FD004C87A5 /* chatto_bg_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 62EAEC3C18D940FD004C87A5 /* chatto_bg_normal.png */; };
+		62EAEC5518D94155004C87A5 /* PrivateChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62EAEC5418D94155004C87A5 /* PrivateChatViewController.xib */; };
+		62EAEC5D18D941E0004C87A5 /* ChatMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EAEC5A18D941E0004C87A5 /* ChatMsg.m */; };
+		62EAEC5E18D941E0004C87A5 /* ChatMsgFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EAEC5B18D941E0004C87A5 /* ChatMsgFrame.m */; };
+		62EAEC5F18D941E0004C87A5 /* ChatMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EAEC5C18D941E0004C87A5 /* ChatMsgCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +74,19 @@
 		62AF137918D69DDF000D5197 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
 		62AF137B18D69EB3000D5197 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		62C1CED418D5A7D6008E56F9 /* ReceiveMessageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiveMessageDelegate.h; sourceTree = "<group>"; };
+		62EAEC2A18D940B3004C87A5 /* PrivateChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateChatViewController.m; sourceTree = "<group>"; };
+		62EAEC3618D940FD004C87A5 /* toolbar_bottom_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar_bottom_bar.png; sourceTree = "<group>"; };
+		62EAEC3718D940FD004C87A5 /* chat_bg_default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chat_bg_default.jpg; sourceTree = "<group>"; };
+		62EAEC3A18D940FD004C87A5 /* chatfrom_bg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatfrom_bg_normal.png; sourceTree = "<group>"; };
+		62EAEC3C18D940FD004C87A5 /* chatto_bg_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatto_bg_normal.png; sourceTree = "<group>"; };
+		62EAEC5318D94140004C87A5 /* PrivateChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateChatViewController.h; sourceTree = "<group>"; };
+		62EAEC5418D94155004C87A5 /* PrivateChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrivateChatViewController.xib; sourceTree = "<group>"; };
+		62EAEC5618D941C0004C87A5 /* ChatMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMsg.h; sourceTree = "<group>"; };
+		62EAEC5718D941C0004C87A5 /* ChatMsgFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMsgFrame.h; sourceTree = "<group>"; };
+		62EAEC5818D941C0004C87A5 /* ChatMsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMsgCell.h; sourceTree = "<group>"; };
+		62EAEC5A18D941E0004C87A5 /* ChatMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMsg.m; sourceTree = "<group>"; };
+		62EAEC5B18D941E0004C87A5 /* ChatMsgFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMsgFrame.m; sourceTree = "<group>"; };
+		62EAEC5C18D941E0004C87A5 /* ChatMsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMsgCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +117,7 @@
 		628CD3CC18D1C655002DCA75 = {
 			isa = PBXGroup;
 			children = (
+				62EAEC2C18D940EC004C87A5 /* pictures */,
 				628CD3DE18D1C655002DCA75 /* CharRoom */,
 				628CD3F718D1C655002DCA75 /* CharRoomTests */,
 				628CD3D718D1C655002DCA75 /* Frameworks */,
@@ -132,6 +155,10 @@
 				628CD3E818D1C655002DCA75 /* AppDelegate.m */,
 				628CD41318D1C8A3002DCA75 /* NetWork.m */,
 				628CD40818D1C666002DCA75 /* RootViewController.m */,
+				62EAEC2A18D940B3004C87A5 /* PrivateChatViewController.m */,
+				62EAEC5A18D941E0004C87A5 /* ChatMsg.m */,
+				62EAEC5B18D941E0004C87A5 /* ChatMsgFrame.m */,
+				62EAEC5C18D941E0004C87A5 /* ChatMsgCell.m */,
 				628CD3EA18D1C655002DCA75 /* Images.xcassets */,
 				628CD3DF18D1C655002DCA75 /* Supporting Files */,
 			);
@@ -170,10 +197,14 @@
 		628CD40C18D1C674002DCA75 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				62EAEC5618D941C0004C87A5 /* ChatMsg.h */,
+				62EAEC5718D941C0004C87A5 /* ChatMsgFrame.h */,
+				62EAEC5818D941C0004C87A5 /* ChatMsgCell.h */,
 				62C1CED418D5A7D6008E56F9 /* ReceiveMessageDelegate.h */,
 				628CD41218D1C8A3002DCA75 /* NetWork.h */,
 				628CD3E718D1C655002DCA75 /* AppDelegate.h */,
 				628CD40718D1C666002DCA75 /* RootViewController.h */,
+				62EAEC5318D94140004C87A5 /* PrivateChatViewController.h */,
 			);
 			name = headers;
 			sourceTree = "<group>";
@@ -181,6 +212,7 @@
 		628CD40D18D1C682002DCA75 /* nibFiles */ = {
 			isa = PBXGroup;
 			children = (
+				62EAEC5418D94155004C87A5 /* PrivateChatViewController.xib */,
 				628CD40918D1C666002DCA75 /* RootViewController.xib */,
 			);
 			name = nibFiles;
@@ -195,6 +227,17 @@
 				628CD40F18D1C847002DCA75 /* AsyncUdpSocket.m */,
 			);
 			name = AsyncUdpSocket;
+			sourceTree = "<group>";
+		};
+		62EAEC2C18D940EC004C87A5 /* pictures */ = {
+			isa = PBXGroup;
+			children = (
+				62EAEC3618D940FD004C87A5 /* toolbar_bottom_bar.png */,
+				62EAEC3718D940FD004C87A5 /* chat_bg_default.jpg */,
+				62EAEC3A18D940FD004C87A5 /* chatfrom_bg_normal.png */,
+				62EAEC3C18D940FD004C87A5 /* chatto_bg_normal.png */,
+			);
+			name = pictures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,9 +315,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62EAEC4F18D940FD004C87A5 /* chatto_bg_normal.png in Resources */,
+				62EAEC5518D94155004C87A5 /* PrivateChatViewController.xib in Resources */,
 				628CD3E318D1C655002DCA75 /* InfoPlist.strings in Resources */,
+				62EAEC4D18D940FD004C87A5 /* chatfrom_bg_normal.png in Resources */,
+				62EAEC4A18D940FD004C87A5 /* chat_bg_default.jpg in Resources */,
 				628CD3EB18D1C655002DCA75 /* Images.xcassets in Resources */,
 				628CD40B18D1C666002DCA75 /* RootViewController.xib in Resources */,
+				62EAEC4918D940FD004C87A5 /* toolbar_bottom_bar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,8 +344,12 @@
 				628CD3E918D1C655002DCA75 /* AppDelegate.m in Sources */,
 				628CD41418D1C8A3002DCA75 /* NetWork.m in Sources */,
 				628CD3E518D1C655002DCA75 /* main.m in Sources */,
+				62EAEC5F18D941E0004C87A5 /* ChatMsgCell.m in Sources */,
+				62EAEC5D18D941E0004C87A5 /* ChatMsg.m in Sources */,
 				62AF137A18D69DDF000D5197 /* AsyncSocket.m in Sources */,
+				62EAEC2B18D940B3004C87A5 /* PrivateChatViewController.m in Sources */,
 				628CD40A18D1C666002DCA75 /* RootViewController.m in Sources */,
+				62EAEC5E18D941E0004C87A5 /* ChatMsgFrame.m in Sources */,
 				628CD41018D1C847002DCA75 /* AsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,7 @@
 
 #import "NetWork.h"
 
-NSString * const NetWorkDefaultHost = @"192.168.1.106";
+NSString * const NetWorkDefaultHost = @"127.0.0.1";
 int const NetWorkDefaultPort = 2502;
 
 @implementation NetWork
@@ -26,7 +26,7 @@ int const NetWorkDefaultPort = 2502;
         
         mainPort = NetWorkDefaultPort;
         
-        [self initSocket];
+//        [self initSocket];
         
         fileLength = 0;
         receiveData = [[NSMutableData alloc] initWithLength:0];
@@ -50,19 +50,31 @@ int const NetWorkDefaultPort = 2502;
 
 #pragma mark - 对外接口
 
+- (void)setBroadCastHost:(NSString *)theHost
+{
+    broadCastHost = theHost;
+}
+
+- (void)setMainPort:(int)theMainPort
+{
+    mainPort = theMainPort;
+    [self initSocket];
+}
+
 
 - (void)sendMessageWith:(NSString *)theMessage
 {
-    NSString * sendMessage = [NSString stringWithFormat:@"zjj : %@",theMessage];
-    NSData * sendData = [sendMessage dataUsingEncoding:NSUTF8StringEncoding];
-    [mainTcpSocket writeData:sendData withTimeout:-1 tag:1];
+    [mainTcpSocket writeData:[self handleSendMessage:theMessage] withTimeout:-1 tag:1];
 }
 
 #pragma mark - private methods
 
-
-
-#pragma mark - main methods
+- (NSData *)handleSendMessage:(NSString *)theMessage
+{
+    NSString * sendMessage = [NSString stringWithFormat:@"zjj : %@",theMessage];
+    NSData * sendData = [sendMessage dataUsingEncoding:NSUTF8StringEncoding];
+    return sendData;
+}
 
 
 #pragma mark - AsyncSocket Delegate
@@ -72,7 +84,8 @@ int const NetWorkDefaultPort = 2502;
     NSString * sendMessage = @"zjj";
     NSData * sendData = [sendMessage dataUsingEncoding:NSUTF8StringEncoding];
     [mainTcpSocket writeData:sendData withTimeout:-1 tag:1];
-    NSLog(@"连接成功");
+    NSLog(@"确认连接成功");
+    [self.delegate setState:@"连接成功"];
 }
 
 - (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
@@ -81,6 +94,7 @@ int const NetWorkDefaultPort = 2502;
 
     NSString * receiveMessage = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     [self.delegate receiveMessageWith:receiveMessage];
+    
     NSLog(@"%@",receiveMessage);
     
 }
